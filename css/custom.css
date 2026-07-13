@@ -1,0 +1,165 @@
+/* ==========================================================
+   MAGICMIRROR DASHBOARD
+   Tema personalizado para monitor 4:3
+   ========================================================== */
+
+/* ---------- CONFIGURAÇÃO GERAL ---------- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #05070a;
+    color: #ffffff;
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reduz as margens padrão do MagicMirror */
+.region {
+    margin: 0;
+}
+
+.module {
+    margin-bottom: 15px;
+}
+
+/* ---------- TEXTOS ---------- */
+
+.normal,
+.dimmed,
+.light,
+.bright {
+    color: #ffffff;
+}
+
+.dimmed {
+    color: #b8c1cc;
+}
+
+header {
+    color: #4fc3f7;
+    border-bottom: 1px solid rgba(79, 195, 247, 0.35);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   RELÓGIO — TOPO CENTRAL
+   ========================================================== */
+
+.clock {
+    text-align: center;
+}
+
+.clock .time {
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.clock .date {
+    color: #4fc3f7;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+/* ==========================================================
+   CLIMA — LADO ESQUERDO E DIREITO
+   ========================================================== */
+
+.weather {
+    color: #ffffff;
+}
+
+.weather .wi {
+    color: #ffd54f;
+}
+
+.weather .temp {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   CALENDÁRIO
+   ========================================================== */
+
+.calendar {
+    font-size: 16px;
+}
+
+.calendar .symbol {
+    color: #66bb6a;
+}
+
+.calendar .title {
+    color: #ffffff;
+}
+
+.calendar .time {
+    color: #b8c1cc;
+}
+
+/* ==========================================================
+   NOTÍCIAS — BARRA INFERIOR
+   ========================================================== */
+
+.newsfeed {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.newsfeed .newsfeed-title {
+    color: #ffffff;
+}
+
+.newsfeed .newsfeed-source {
+    color: #4fc3f7;
+}
+
+/* ==========================================================
+   BARRA INFERIOR
+   ========================================================== */
+
+.region.bottom.bar {
+    background: rgba(10, 15, 22, 0.92);
+    border-top: 1px solid rgba(79, 195, 247, 0.35);
+    padding: 10px 20px;
+}
+
+/* ==========================================================
+   AJUSTE PARA MONITOR 4:3
+   ========================================================== */
+
+@media (max-width: 1280px) {
+
+    .region {
+        margin: 20px;
+    }
+
+    .clock .time {
+        font-size: 58px;
+    }
+
+    .clock .date {
+        font-size: 18px;
+    }
+
+    .calendar {
+        font-size: 15px;
+    }
+
+    .newsfeed {
+        font-size: 16px;
+    }
+}

@@ -18,13 +18,13 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
 fi
 
 echo
-echo "[1/7] Atualizando o sistema..."
+echo "[1/8] Atualizando o sistema..."
 
 sudo apt update
 sudo apt upgrade -y
 
 echo
-echo "[2/7] Instalando dependências..."
+echo "[2/8] Instalando dependências..."
 
 sudo apt install -y \
 git \
@@ -37,7 +37,7 @@ python3-pip \
 ca-certificates
 
 echo
-echo "[3/7] Verificando Node.js..."
+echo "[3/8] Verificando Node.js..."
 
 if command -v node >/dev/null 2>&1; then
     echo "Node encontrado: $(node -v)"
@@ -55,7 +55,7 @@ echo
 echo "NPM: $(npm -v)"
 
 echo
-echo "[4/7] Instalando MagicMirror²..."
+echo "[4/8] Instalando MagicMirror²..."
 
 if [ ! -d "$MM_DIR" ]; then
 
@@ -70,12 +70,12 @@ fi
 cd "$MM_DIR"
 
 echo
-echo "[5/7] Instalando dependências do MagicMirror..."
+echo "[5/8] Instalando dependências do MagicMirror..."
 
 npm install
 
 echo
-echo "[6/7] Criando backup da configuração..."
+echo "[6/8] Criando backup da configuração..."
 
 mkdir -p "$HOME/magicmirror-backup"
 
@@ -87,12 +87,20 @@ if [ -f "$MM_DIR/config/config.js" ]; then
 fi
 
 echo
-echo "[7/7] Aplicando configuração personalizada..."
+echo "[7/8] Aplicando configuração personalizada..."
 
 cp "$SCRIPT_DIR/config/config.js" \
    "$MM_DIR/config/config.js"
 
 echo "Configuração instalada com sucesso."
+
+echo
+echo "[8/8] Aplicando tema personalizado..."
+
+cp "$SCRIPT_DIR/css/custom.css" \
+   "$MM_DIR/css/custom.css"
+
+echo "Tema personalizado instalado com sucesso."
 
 echo
 echo "================================================"
@@ -105,9 +113,9 @@ echo "  ✓ MagicMirror instalado"
 echo "  ✓ Dependências instaladas"
 echo "  ✓ Backup da configuração criado"
 echo "  ✓ config.js personalizado instalado"
+echo "  ✓ custom.css personalizado instalado"
 
 echo
 echo "Próximas etapas:"
-echo "  ○ Copiar custom.css"
 echo "  ○ Instalar módulos adicionais"
 echo "  ○ Configurar PM2"
